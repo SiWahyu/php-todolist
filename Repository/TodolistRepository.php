@@ -10,6 +10,8 @@ namespace Repository{
     public function showTodolist(): array;
 
     public function insertTodolist(Todolist $todolist): void;
+
+    public function selesaiTodolist(int $id): void;
   }
   
   class TodolistRepositoryImpl implements TodolistRepository{
@@ -36,6 +38,14 @@ namespace Repository{
       $result = $this->pdo->prepare($sql);
 
       $result->execute([$todolist->getKegiatan(), $todolist->getDeskripsiKegiatan()]);
+    }
+
+    public function selesaiTodolist(int $id):void{
+
+      $sql = "DELETE FROM tbl_todolist WHERE id=?";
+
+      $result = $this->pdo->prepare($sql);
+      $result->execute([$id]);
     }
   }
   

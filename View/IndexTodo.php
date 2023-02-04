@@ -43,7 +43,7 @@ namespace View;
         <th scope="row"><?= $no++ ?></th>
         <td><?= $todolist['kegiatan'] ?></td>
         <td><?= $todolist['deskripsi_kegiatan'] ?></td>
-        <td><a class="btn btn-success" href="">selesai</a></td>
+        <td><a class="btn btn-success" href="SelesaiTodo.php?id=<?=$todolist['id']?>">selesai</a></td>
       </tr>
 
       <?php endforeach ?>
