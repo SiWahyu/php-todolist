@@ -26,6 +26,7 @@ namespace View;
         <th>Nomor</th>
         <th>Kegiatan</th>
         <th>Deskripsi Kegiatan</th>
+        <th>Status Kegiatan</th>
       </tr>
     </thead>
     <!--Table head-->
