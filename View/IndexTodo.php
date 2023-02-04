@@ -3,6 +3,7 @@ namespace View;
 
   require_once(__DIR__ . '/../Controller/TodolistController.php');
   $no = 1;
+  $showTodolist = $todolist->showTodolist();
 ?>
 
 <!DOCTYPE html>
@@ -17,9 +18,13 @@ namespace View;
 <body>
   <div class="container">
     <h2 class="text-center">Daftar Kegiatan</h2>
+    <div class="p-3">
+    <a class="btn btn-primary p-3" href="TambahTodo.php">Tambah Kegiatan</a>
+    </div>
     <div class="table-responsive">
       <!--Table-->
-      <table class="table table-striped">
+
+      <table class="table table-striped border border-secondary-subtle">
         <!--Table head-->
         <thead>
       <tr>
@@ -33,13 +38,15 @@ namespace View;
     
     <!--Table body-->
     <tbody>
-      <?php foreach($showTodolist as $todolist) ?>
+      <?php foreach($showTodolist as $todolist): ?>
       <tr>
         <th scope="row"><?= $no++ ?></th>
         <td><?= $todolist['kegiatan'] ?></td>
         <td><?= $todolist['deskripsi_kegiatan'] ?></td>
-        <td><a class="btn btn-primary" href="">selesai</a></td>
+        <td><a class="btn btn-success" href="">selesai</a></td>
       </tr>
+
+      <?php endforeach ?>
     </tbody>
     <!--Table body-->
   </table>
